@@ -1,31 +1,102 @@
-/* Variables */
-$vin-blue: #5bb7db;
-$vin-green: #60b044;
-$vin-red: #ff0000;
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500');
 
-/* Styles */
-body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.4em;
-  color: #4d4d4d;
-  min-width: 230px;
-  max-width: 550px;
-  margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-weight: 300;
+body{
+  background-color:#FFFFFF;
 }
 
-td {
-	padding: 12px;
+h1, h2 , h3 , h4 , h5, button, select{
+  font-family: 'Heebo', sans-serif;
+}
+
+h1, h2 {
+  font-weight: 500;
+}
+
+h3, h4, button, select{
+  font-weight: 400;
+}
+
+h5{
+  font-weight: 300;
+  font-size: 1vw;
+}
+
+h1 {
+  font-size: 2em;
 }
 
 h2 {
-	color: $vin-blue;
+  font-size: 1.5vw;
 }
 
-.savings { color: $vin-green; }
-.loss { color: $vin-red; }
-input.small { width: 46px; }
-td.fuel-savings-label { width: 175px; }
+h3 {
+  font-size: 1.25vw;
+}
+
+h4, button, select{
+  font-size: 1vw;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  align-items: center;
+  text-align: center;
+
+  list-style-type: none;
+  li{
+    &.logo {
+      list-style-type: inherit;
+      grid-column: 2;
+
+      a {
+        text-decoration: none;
+
+        &:visited{
+          text-decoration: none;
+          color:black;
+        }
+      }
+    }
+
+    &.buttons{
+      grid-column:6;
+
+      .grid-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1em;
+
+        .identity {
+          grid-column: 1;
+          border-style: none;
+          outline: none;
+        }
+
+        .login {
+          grid-column: 2;
+          background-color: white;
+          border-color: gray;
+          border-radius: 5px;
+          border-style: solid;
+          padding: 1em;
+          outline: none;
+        }
+
+        .selectLanguage {
+          grid-column: 3;
+          border-style: none;
+          outline: none;
+        }
+      }
+
+    }
+
+  }
+}
+
+
+
+

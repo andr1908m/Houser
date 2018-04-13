@@ -1,17 +1,16 @@
 {
-  "name": "react-slingshot",
-  "version": "7.0.1",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "houser",
+  "version": "0.0.1",
+  "description": "A real-estate website",
   "engines": {
     "npm": ">=3"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm run start-message",
-    "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
+    "start": "concurrently -k -r -s first \"npm run open:src\" \"npm run lint:watch\"",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
@@ -28,7 +27,7 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
   },
-  "author": "Cory House",
+  "author": "Andres Rodriguez",
   "license": "MIT",
   "dependencies": {
     "object-assign": "4.1.0",
@@ -114,7 +113,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/react-slingshot"
+    "url": "git+https://github.com/coryhouse/react-slingshot.git"
   },
   "jest": {
     "moduleNameMapper": {
@@ -195,5 +194,12 @@
       "jest": true
     },
     "globals": {}
+  },
+  "bugs": {
+    "url": "https://github.com/coryhouse/react-slingshot/issues"
+  },
+  "main": "webpack.config.dev.js",
+  "directories": {
+    "doc": "docs"
   }
 }
