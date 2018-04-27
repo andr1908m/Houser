@@ -25,11 +25,13 @@
     "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
-    "analyze-bundle": "babel-node ./tools/analyzeBundle.js"
+    "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
+    "deploy:github": "git commit -am \"Automated commit message\" && git push && git subtree push --prefix dist origin gh-pages"
   },
   "author": "Andres Rodriguez",
   "license": "MIT",
   "dependencies": {
+    "hoek": "5.0.3",
     "object-assign": "4.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
