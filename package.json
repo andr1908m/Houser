@@ -29,7 +29,7 @@
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
     "deploy": "npm run build:deploy && npm run deploy:github",
-    "deploy:github": "git commit -am \"Automated commit message\" && git push && git subtree push --prefix dist origin gh-pages"
+    "deploy:github": "git commit -a -m \"Automated commit message\" && git push && git subtree push --prefix dist origin gh-pages"
   },
   "author": "Andres Rodriguez",
   "license": "MIT",
