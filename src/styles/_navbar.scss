@@ -40,7 +40,7 @@ nav {
         .login {
           grid-column: 2;
           background-color: white;
-          border: 2px solid grey;
+          border: $main-border;
           border-radius: 5px;
           cursor: pointer;
           padding: $padding-button;

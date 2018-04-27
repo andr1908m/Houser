@@ -1,0 +1,53 @@
+@import 'variables';
+#pitch {
+  margin:10vh 0;
+  h2 {
+    text-align: center;
+  }
+  hr{
+    width:30vw;
+  }
+  p {
+    color: gray;
+    text-align: center;
+    margin: 0 auto;
+
+    &#first-para{
+      width: 70vw;
+    }
+  }
+
+  .main-pitch-card {
+    margin:10vh auto;
+    width: 70vw;
+    height: 50vh;
+
+    border-top: $main-border;
+    border-radius: 5px;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: minmax(30vh, auto);
+
+    .pitch-card{
+      border-bottom: $main-border;
+    }
+
+    img{
+      margin: 0 auto;
+    }
+    #left{
+      border-left: $main-border;
+      border-right: $main-border;
+      grid-column: 1;
+    }
+    #mid{
+      grid-column: 2;
+    }
+    #right{
+      border-left: $main-border;
+      border-right: $main-border;
+      grid-column: 3;
+    }
+  }
+}
