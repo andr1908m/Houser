@@ -19,6 +19,8 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
     "build": "babel-node tools/build.js && npm run open:dist",
+    "prebuild:deploy":"npm run lint && npm run test && npm run clean-dist",
+    "build:deploy":"babel-node tools/build.js",
     "test": "jest",
     "test:CI": "babel-node tools/testCi.js",
     "test:cover": "npm run test -- --coverage ",
@@ -26,6 +28,7 @@
     "test:watch": "jest --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
+    "deploy": "npm run build:deploy && npm run deploy:github",
     "deploy:github": "git commit -am \"Automated commit message\" && git push && git subtree push --prefix dist origin gh-pages"
   },
   "author": "Andres Rodriguez",
