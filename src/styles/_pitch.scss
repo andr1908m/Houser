@@ -1,6 +1,38 @@
 @import 'variables';
+
+@keyframes circle-border {
+  0%{
+    border-right-color: $blue;
+  }
+  33%{
+    border-right-color: gray;
+    border-top-color: $blue;
+  }
+  75%{
+    border-top-color: gray;
+    border-left-color: $blue;
+  }
+  90%{
+    border-left-color: gray;
+    border-bottom-color: $blue;
+  }
+  95% {
+    border-bottom-color: gray;
+  }
+}
+
+@keyframes svg-border{
+
+}
+
+.visible {
+  animation: circle-border 2s;
+  animation-delay: 1s;
+}
+
 #pitch {
-  margin:10vh 0;
+
+
   h2 {
     text-align: center;
   }
@@ -18,36 +50,25 @@
   }
 
   .main-pitch-card {
+
     margin:10vh auto;
     width: 70vw;
-    height: 50vh;
 
-    border-top: $main-border;
+    border: $main-border;
     border-radius: 5px;
 
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-columns: minmax(30vh, auto);
-
-    .pitch-card{
-      border-bottom: $main-border;
-    }
+    display:flex;
+    flex-direction: row;
 
     img{
       margin: 0 auto;
     }
+
     #left{
-      border-left: $main-border;
       border-right: $main-border;
-      grid-column: 1;
-    }
-    #mid{
-      grid-column: 2;
     }
     #right{
       border-left: $main-border;
-      border-right: $main-border;
-      grid-column: 3;
     }
   }
 }

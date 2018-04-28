@@ -3,7 +3,7 @@ import PitchCard from './smallcomps/PitchCard.jsx';
 
 const Pitch = () => {
   return (
-    <section id="pitch">
+    <section id="pitch" data-anchor="sectionTwo">
       <h2>3 EASY STEPS</h2>
       <hr/>
       <p id="first-para">
