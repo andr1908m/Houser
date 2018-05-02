@@ -12,7 +12,7 @@ import './favicon.ico'; // Tell webpack to load favicon.ico
 
 render(
   <AppContainer>
-    <Root history={history} />
+    <Root />
   </AppContainer>,
   document.getElementById('app')
 );

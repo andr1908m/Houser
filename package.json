@@ -36,8 +36,9 @@
   "dependencies": {
     "gsap": "1.20.4",
     "hoek": "5.0.3",
+    "lodash": "4.17.10",
     "object-assign": "4.1.0",
-    "react": "16.2.0",
+    "react": "16.3.2",
     "react-dom": "16.2.0",
     "react-fullpage": "0.1.18",
     "react-redux": "5.0.5",
@@ -200,7 +201,10 @@
       "jquery": true,
       "jest": true
     },
-    "globals": {}
+    "globals": {},
+    "rules": {
+      "react/prop-types": "warn"
+    }
   },
   "bugs": {
     "url": "https://github.com/coryhouse/react-slingshot/issues"
