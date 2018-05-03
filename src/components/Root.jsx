@@ -1,45 +1,30 @@
+import { hot } from "react-hot-loader";
 import React, { Component } from 'react';
-import Header from './sections/Header.jsx';
-import Pitch from './sections/Pitch.jsx';
-import {SectionsContainer, Section} from 'react-fullpage';
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
-// import {TweenMax, Power2, TimelineLite} from "gsap";
+import Landing from './pages/Landing/Landing.jsx';
 
+const Hello = (props) => {
+  const { match } = props;
+  return <h1>hello  {match.params.hey}<Link to="/">to home</Link></h1>
+}
 class Root extends Component {
   constructor(props){
     super(props);
-    this.state = {active:false, componentUpdates: 0};
-  }
-
-  options = {
-    sectionClassName:'section',
-    anchors:['sectionOne', 'sectionTwo'],
-    activeClass: 'active',
-    scrollCallback : (scroll) => {
-
-      if(this.state.componentUpdates === 0){
-        this.setState({active: (scroll.activeSection===1)? true:false, componentUpdates:0})
-      }
-      else
-        this.setState({active:false || this.state.active, componentUpdates:this.state.componentUpdates+1})
-    }
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
-    <div>
-      <SectionsContainer {...this.options}>
-        <Section>
-          <Header/>
-        </Section>
-        <Section>
-          <Pitch active={this.state.active}/>
-        </Section>
-      </SectionsContainer>
-    </div>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div>
+          <Route exact path="/" component={Landing}/>
+          <Route exact path="/hello/" component={Hello}/>
+          <Route exact path="/hello/:hey" component={Hello}/>
+        </div>
+      </Router>
     )
   }
 }
 
-export default Root;
+export default hot(module)(Root);

@@ -9,7 +9,6 @@ class PitchCard extends Component {
   constructor(props){
     super(props);
 
-    this.updateBuffer = 0
     this.right =
     this.top =
     this.left =
@@ -37,8 +36,7 @@ class PitchCard extends Component {
   }
 
   animateSides() {
-    if(this.props.active === true){
-
+      console.log("called!")
       this.left.style.width = "1px"
       this.right.style.width = "1px"
       this.top.style.height = "1px"
@@ -55,30 +53,24 @@ class PitchCard extends Component {
 
       tl.delay(1)
       tl.timeScale(5); //play faster
-
-      // this.setState({animationPlayed:true})
-    }
-
   }
 
   componentDidUpdate(){
-    if(this.state.updateBuffer === 3)
-      this.animateSides();
-    else
-      
+    console.log("did update!", this.props)
+    if(this.props.active === true)
+    this.animateSides();
   }
 
   render(){
-    console.log(this.state)
-    
+
+
     return (
         <div className="main-pitch-card">
-          <div className="container">
-
             <div ref={this.setRight} className="right"></div>
             <div ref={this.setTop} className="top"></div>
             <div ref={this.setLeft} className="left"></div>
             <div ref={this.setBottom} className="bottom"></div>
+
 
             <div className="pitch-card" id="left">
               <img src='https://dummyimage.com/50x50.jpg' alt='hello'/>
@@ -107,7 +99,6 @@ class PitchCard extends Component {
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident neque vitae qui autem libero, natus ut! Velit unde accusamus inventore. Omnis reiciendis excepturi voluptatum minus, aliquam optio mollitia? Ducimus, ullam?
               </p>
             </div>
-          </div>
         </div>
     );
   }

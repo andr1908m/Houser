@@ -1,9 +1,10 @@
 import React from 'react';
 import NavBar from './smallcomps/NavBar.jsx';
 
-const Header = () => {
+const Header = (props) => {
   return (
-    <header data-anchor="sectionOne">
+    <header id="header">
+      <div ref={props.overlayRef} className="header-overlay"></div>
       <NavBar/>
       <div className="front">
         <h1>Effortless to the perfect Tenant</h1>

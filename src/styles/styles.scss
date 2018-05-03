@@ -38,7 +38,26 @@ h4, button, select{
   font-size: 1em;
 }
 
+.hidden{
+  display: hidden;
+}
 
+.wrap{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+}
+
+// .navigationStyle{
+//   position: fixed;
+//   z-index: 10;
+//   bottom: 5px;
+//   transform: translate(-50%, -50%);
+// }
 
 
 

@@ -2,17 +2,15 @@
 
 #pitch {
 
-  display:block;
-
-  .container{
-    display:inline-flex;
-  }
+  position: relative;
+  display:grid;
+  grid-template-rows: repeat(4, 1fr);
 
   .right, .left, .top, .bottom {
     display:inline-block;
     position: absolute;
     background: $blue;
-    
+
   }
 
   .right{
@@ -49,16 +47,17 @@
     margin: 0 auto;
 
     &#first-para{
-      width: 70vw;
+      width: 60vw;
     }
   }
 
   .main-pitch-card {
 
+    grid-row: 2;
     position:relative;
 
     margin:1vh auto;
-    width: 70vw;
+    width:55vw;
 
     border-radius: 5px;
 
