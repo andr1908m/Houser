@@ -2,6 +2,13 @@ import { hot } from "react-hot-loader";
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import brands from '@fortawesome/fontawesome-free-brands';
+import regular from '@fortawesome/fontawesome-free';
+
+fontawesome.library.add(brands, solid, regular)
+
 import Landing from './pages/Landing/Landing.jsx';
 
 const Hello = (props) => {

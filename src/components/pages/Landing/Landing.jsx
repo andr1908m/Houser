@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 import Header from './sections/Header.jsx';
 import Pitch from './sections/Pitch.jsx';
+import Benefits from './sections/Benefits.jsx';
+
 import SlideButtons from './sections/smallcomps/SlideButtons.jsx';
 
 import DoSlide from 'do-slide';
@@ -14,19 +16,12 @@ class Landing extends Component {
     super(props);
     this.state = {active:false, componentUpdates: 0};
 
-    this.overlayRef = null;
-    this.setOverlayRef = (ref)=> {
-      this.overlayRef = ref;
-    }
-
-    this.containerRef = null;
-    this.setContainerRef = (ref)=> {
-      this.containerRef = ref;
-    }
+    
+    this.containerRef = React.createRef();
 
     this.state = {
       pitchActive:false
-    }
+    };
 
   }
 
@@ -55,7 +50,7 @@ class Landing extends Component {
     slide.el.addEventListener
     slide.onBeforeChange((...params) => {
       this.activeSec = params[1];
-      this.overlayRef.classList.toggle("header-overlay-ani");
+      document.querySelector(".header-overlay").classList.toggle("header-overlay-ani");
     })
     slide.onChanged(() => {
       if(this.activeSec === 1){
@@ -69,13 +64,15 @@ class Landing extends Component {
   componentDidUpdate(){
 
   }
+
   render() {
     // console.log(this.state)
     return (
       <div className="wrap">
-        <div ref={this.setContainerRef.bind(this)} className="slide-container">
-          <Header overlayRef={this.setOverlayRef.bind(this)}/>
+        <div className="slide-container">
+          <Header/>
           <Pitch active={this.state.pitchActive}/>
+          <Benefits/>
         </div>
         <SlideButtons containerRef={this.containerRef} />
       </div>
