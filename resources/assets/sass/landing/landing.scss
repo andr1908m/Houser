@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,400,500");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "navbar", "header", "pitch", "benefits";
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Heebo", sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  padding: 1em;
+}
+
+h3,
+h4,
+button,
+select,
+a {
+  padding: 0.5em;
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4,
+button,
+select,
+a {
+  font-size: 1em;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+// .navigationStyle{
+//   position: fixed;
+//   z-index: 10;
+//   bottom: 5px;
+//   transform: translate(-50%, -50%);
+// }

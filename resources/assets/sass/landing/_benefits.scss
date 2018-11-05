@@ -1,0 +1,30 @@
+@import "variables";
+
+#benefits {
+  background: linear-gradient(
+    to top,
+    #2994db 7%,
+    #eaf3f9 26%,
+    #f4f6f7 68%,
+    #ffffff 98%
+  );
+  text-align: center;
+  position: relative;
+
+  div {
+    hr {
+      width: 30vw;
+    }
+    .benefits-grid {
+      padding-top: 10vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+
+      * {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
